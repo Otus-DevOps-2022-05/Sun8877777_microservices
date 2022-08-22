@@ -10,3 +10,4 @@ Sun8877777 microservices repository
 Работа с Docker Hub
 
 Выполнены все пункты задания и задания со *.
+
