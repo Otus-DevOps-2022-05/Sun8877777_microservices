@@ -2,7 +2,6 @@ version: "3.3"
 services:
 
   post_db:
-    container_name: mongo
     env_file:
       - .env
     image: mongo:${VERSION_MONGO}
@@ -14,18 +13,16 @@ services:
           - comment_db
           - post_db
   ui:
-    container_name: svc-ui
     env_file:
         - .env
     build: ./ui
     image: ${USERNAME}/ui:${VERSION}
     ports:
-      - ${UI_PORT_OUT}:${UI_PORT_IN}/tcp
+      - 9292:9292/tcp
     networks:
       - front_net
 
   post:
-    container_name: svc-post
     env_file:
         - .env
     build: ./post-py
@@ -35,7 +32,6 @@ services:
       - back_net
 
   comment:
-    container_name: svc-comment
     env_file:
         - .env
     build: ./comment
