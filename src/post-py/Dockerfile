@@ -3,8 +3,8 @@ FROM python:3.6.0-alpine
 WORKDIR /app
 ADD . /app
 
-RUN pip install -U pip && \
-    apk --no-cache --update add build-base && \
+RUN apk --no-cache --update add build-base && \
+    pip install -U pip && \
     pip install -r /app/requirements.txt && \
     apk del build-base
 
