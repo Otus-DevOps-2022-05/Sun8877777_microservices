@@ -1,0 +1,21 @@
+---
+# tasks file for gitlab
+- name: Create a directory for gitlab volumes
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - /srv/gitlab/config
+    - /srv/gitlab/data
+    - /srv/gitlab/logs
+
+- name: Copy docker-compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: /srv/gitlab/docker-compose.yml
+
+- name: docker_compose up
+  command: sudo docker-compose -f /srv/gitlab/docker-compose.yml up -d
+  become: yes
+
+

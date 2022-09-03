@@ -1,0 +1,3 @@
+---
+# defaults file for gitlab
+ip_addr_host: 127.0.0.1
