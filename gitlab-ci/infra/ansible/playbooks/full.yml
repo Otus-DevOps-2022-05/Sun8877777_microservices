@@ -1,0 +1,4 @@
+---
+- import_playbook: install_docker.yml
+- import_playbook: gitlab_up_in_docker.yml
+# - import_playbook: start_reddit_in_docker.yml
