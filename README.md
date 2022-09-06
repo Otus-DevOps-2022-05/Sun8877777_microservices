@@ -90,7 +90,7 @@ docker-compose -p compose_project up -d
 Выполнены все пунктиы основного задания.
 Сделано 1 -е задание со *.
 
-### HW17 
+### HW17 Введение в мониторинг. Системы мониторинга.
 Выполнены все пунктиы основного задания.
 Ссылки на образы:
 https://hub.docker.com/repository/docker/sun8877777/prometheus
@@ -98,4 +98,4 @@ https://hub.docker.com/repository/docker/sun8877777/comment
 https://hub.docker.com/repository/docker/sun8877777/post
 https://hub.docker.com/repository/docker/sun8877777/ui
 
-Сделано 1 -е задание со *.
+Сделаны все задания со *, кроме последнего (makefile).
