@@ -14,5 +14,5 @@ spec:
         app: mongo
     spec:
       containers:
-        - image: sun8877777/mongo
+        - image: mongo:3.2
           name: mongo

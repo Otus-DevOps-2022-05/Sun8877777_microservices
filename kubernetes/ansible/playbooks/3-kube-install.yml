@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: true
+  vars:
+    k8s_version: 1.19.14-00
+
+  tasks:
+    - name: Install k8s components
+      apt:
+        pkg: "{{ item }}"
+        update_cache: true
+        force: true
+      loop:
+        - kubelet={{ k8s_version }}
+        - kubeadm={{ k8s_version }}
+        - kubectl={{ k8s_version }}
+      notify: restart docker
+
+  handlers:
+    - name: restart docker
+      become: true
+      service:
+        name: docker
+        state: restarted
+
+
+
+
