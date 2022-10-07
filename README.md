@@ -119,3 +119,16 @@ https://hub.docker.com/repository/docker/sun8877777/ui
 и его дальнейшим запуском в Kubernetes
 
 Выполнено задание со *.
+
+### HW20 
+План
+
+1. Ingress Controller
+2. Ingress
+3. Secret
+4. TLS
+5. LoadBalancer Service
+6. Network Policies
+7. PersistentVolumes
+8. PersistentVolumeClaims
+
