@@ -120,7 +120,14 @@ https://hub.docker.com/repository/docker/sun8877777/ui
 
 Выполнено задание со *.
 
-### HW20 
+### HW20  Kubernetes. Запусккластера и приложения.Модель безопасности
+- План
+1. Развернуть локальное окружение для работы с Kubernetes
+2. Развернуть Kubernetes в Yandex Cloud
+3. Запустить reddit в Kubernetes
+Выполнены все задания со *
+
+### HW21
 План
 
 1. Ingress Controller
