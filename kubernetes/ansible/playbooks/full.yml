@@ -1,0 +1,6 @@
+---
+- import_playbook: 1-kube-dependencies.yml
+- import_playbook: 2-install_docker.yml
+- import_playbook: 3-kube-install.yml
+- import_playbook: 4-master-init.yml
+- import_playbook: 5-worker-init.yml

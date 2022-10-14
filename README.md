@@ -111,3 +111,31 @@ https://hub.docker.com/repository/docker/sun8877777/ui
 6. Распределенный трейсинг
 
 Выполнено 1 ое задание со *.
+### HW19 Введение в kubernetes
+План
+1. Разобрать на практике все компоненты Kubernetes, развернуть их
+вручную используя kubeadm
+2. Ознакомиться с описанием основных примитивов нашего приложения
+и его дальнейшим запуском в Kubernetes
+
+Выполнено задание со *.
+
+### HW20  Kubernetes. Запусккластера и приложения.Модель безопасности
+- План
+1. Развернуть локальное окружение для работы с Kubernetes
+2. Развернуть Kubernetes в Yandex Cloud
+3. Запустить reddit в Kubernetes
+Выполнены все задания со *
+
+### HW21
+План
+
+1. Ingress Controller
+2. Ingress
+3. Secret
+4. TLS
+5. LoadBalancer Service
+6. Network Policies
+7. PersistentVolumes
+8. PersistentVolumeClaims
+

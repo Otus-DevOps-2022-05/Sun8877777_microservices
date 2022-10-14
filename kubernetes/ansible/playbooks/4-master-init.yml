@@ -1,0 +1,45 @@
+---
+- hosts: master
+  become: true
+  vars:
+    CIDR_block: 10.244.0.0/16
+  tasks:
+
+  - name: Get public IP master
+    ipify_facts:
+    register: public_ip
+
+  - name: Show instance IP
+    debug: msg="{{ public_ip.ansible_facts.ipify_public_ip }}"
+
+  - name: Init master node
+    shell: kubeadm init --apiserver-cert-extra-sans="{{ public_ip.ansible_facts.ipify_public_ip }}" --apiserver-advertise-address=0.0.0.0 --control-plane-endpoint="{{ public_ip.ansible_facts.ipify_public_ip }}" --pod-network-cidr="{{ CIDR_block }}"
+
+  - name: create .kube directory
+    become: true
+    become_user: ubuntu
+    file:
+      path: $HOME/.kube
+      state: directory
+      mode: 0755
+
+  - name: copy admin.conf to user's kube config
+    copy:
+      src: /etc/kubernetes/admin.conf
+      dest: /home/ubuntu/.kube/config
+      remote_src: true
+      owner: ubuntu
+
+  - name: calico_config
+    ansible.builtin.template:
+      src: ../files/calico.yaml.j2
+      dest: /tmp/calico.yaml
+      owner: ubuntu
+      group: ubuntu
+      mode: '0644'
+
+  - name: nstall Pod network
+    become_user: ubuntu
+    shell: kubectl apply -f /tmp/calico.yaml
+
+

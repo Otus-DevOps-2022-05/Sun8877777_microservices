@@ -1,0 +1,13 @@
+---
+  plugin: yc_compute
+  folders: b1gm9cnd6vftu8o1a1sk
+  filters:
+    status == 'RUNNING'
+  auth_kind: serviceaccountfile
+  service_account_file: /home/alex/.ssh/msa.json
+  strict: False
+  compose:
+    ansible_host: network_interfaces[*].primary_v4_address.one_to_one_nat.address'
+  groups:
+    master: labels['tags'] == 'master'
+    workers: labels['tags'] == 'worker'
