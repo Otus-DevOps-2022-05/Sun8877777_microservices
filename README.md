@@ -127,7 +127,7 @@ https://hub.docker.com/repository/docker/sun8877777/ui
 3. Запустить reddit в Kubernetes
 Выполнены все задания со *
 
-### HW21
+### HW21 Kubernetes. Networks, Storages.
 План
 
 1. Ingress Controller
@@ -138,4 +138,4 @@ https://hub.docker.com/repository/docker/sun8877777/ui
 6. Network Policies
 7. PersistentVolumes
 8. PersistentVolumeClaims
-
+Все задания выполнены полностью, включая задачу со *

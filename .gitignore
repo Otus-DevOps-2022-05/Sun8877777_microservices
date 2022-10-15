@@ -8,7 +8,8 @@
 # Cache objects
 packer_cache/
 variables.json
-
+tls.crt
+tls.key
 # Crash log
 crash.log
 
