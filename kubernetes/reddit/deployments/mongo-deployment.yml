@@ -33,9 +33,11 @@ spec:
           requests:
             cpu: 200m
             memory: 200Mi
+
         volumeMounts:
         - name: mongo-persistent-storage
           mountPath: /data/db
       volumes:
       - name: mongo-persistent-storage
-        emptyDir: {}
+        persistentVolumeClaim:
+          claimName:  mongo-pvc
