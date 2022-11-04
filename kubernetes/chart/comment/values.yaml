@@ -4,11 +4,7 @@ service:
   externalPort: 9292
 
 image:
-  repository: sun8877777/ui
+  repository: sun8877777/comment
   tag: logging
 
-
-postHost:
-postPort:
-commentHost:
-commentPort:
+databaseHost:

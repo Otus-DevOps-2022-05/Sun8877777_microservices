@@ -64,7 +64,7 @@ resource "yandex_kubernetes_node_group" "my_node_group" {
     }
 
     resources {
-      memory = 8
+      memory = 10
       cores  = 4
       core_fraction = 20
     }
