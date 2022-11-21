@@ -204,6 +204,9 @@ stop_review:
   }
 
 before_script:
+  - curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  - chmod +x /usr/bin/kubectl
+  - kubectl version --client
   - kubectl config set-cluster k8scluster --server="$KUBE_URL" --insecure-skip-tls-verify=true
   - kubectl config set-crefentials admin --token="$KUBE_TOKEN"
   - kubectl config set-cintext default --cluster=k8scluster --user=admin

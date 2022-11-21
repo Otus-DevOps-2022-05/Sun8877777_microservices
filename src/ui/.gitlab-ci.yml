@@ -122,11 +122,6 @@ review:
   except:
     - master
   before_script:
-    - kubectl config set-cluster k8scluster --server="$KUBE_URL" --insecure-skip-tls-verify=true
-    - kubectl config set-crefentials admin --token="$KUBE_TOKEN"
-    - kubectl config set-cintext default --cluster=k8scluster --user=admin
-    - kubectl config use-context default
-    - kubectl get po
     - mkdir -p $HOME/.docker
     - echo $DOCKER_AUTH_CONFIG > $HOME/.docker/config.json
     # installing dependencies
@@ -144,6 +139,11 @@ review:
     - curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
     - chmod +x /usr/bin/kubectl
     - kubectl version --client
+    - kubectl config set-cluster k8scluster --server="$KUBE_URL" --insecure-skip-tls-verify=true
+    - kubectl config set-crefentials admin --token="$KUBE_TOKEN"
+    - kubectl config set-cintext default --cluster=k8scluster --user=admin
+    - kubectl config use-context default
+    - kubectl get po
     # ensuring namespace
     - kubectl describe namespace "$KUBE_NAMESPACE" || kubectl create namespace "$KUBE_NAMESPACE"
     # installing Tiller
@@ -212,5 +212,10 @@ stop_review:
     - curl -L -o /usr/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
     - chmod +x /usr/bin/kubectl
     - kubectl version --client
+    - kubectl config set-cluster k8scluster --server="$KUBE_URL" --insecure-skip-tls-verify=true
+    - kubectl config set-crefentials admin --token="$KUBE_TOKEN"
+    - kubectl config set-cintext default --cluster=k8scluster --user=admin
+    - kubectl config use-context default
+    - kubectl get po
   script:
     - helm delete "$name" --purge
