@@ -139,3 +139,10 @@ https://hub.docker.com/repository/docker/sun8877777/ui
 7. PersistentVolumes
 8. PersistentVolumeClaims
 Все задания выполнены полностью, включая задачу со *
+
+### HW22 CI/CD в Kubernetes.
+
+Работа с Helm
+Развертывание Gitlab в Kubernetes
+Запуск CI/CD конвейера в Kubernetes
+

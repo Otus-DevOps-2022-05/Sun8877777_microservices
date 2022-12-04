@@ -1,0 +1,14 @@
+---
+service:
+  internalPort: 9292
+  externalPort: 9292
+
+image:
+  repository: sun8877777/ui
+  tag: logging
+
+
+postHost:
+postPort:
+commentHost:
+commentPort:

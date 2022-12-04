@@ -1,0 +1,10 @@
+---
+service:
+  internalPort: 9292
+  externalPort: 9292
+
+image:
+  repository: sun8877777/comment
+  tag: logging
+
+databaseHost:

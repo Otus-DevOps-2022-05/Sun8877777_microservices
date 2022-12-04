@@ -1,0 +1,15 @@
+dependencies:
+- name: ui
+  repository: file://../chart/ui
+  version: 1.0.0
+- name: post
+  repository: file://../chart/post
+  version: 1.0.0
+- name: comment
+  repository: file://../chart/comment
+  version: 1.0.0
+- name: mongo
+  repository: file://../chart/mongo
+  version: 1.0.0
+digest: sha256:14d3985c22ae0aaf2452247ff94a4b0675ff5c7ee21633d44c5cff6b3c1a41f4
+generated: "2022-11-04T19:48:26.520249906+03:00"
